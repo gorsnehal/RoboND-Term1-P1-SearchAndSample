@@ -23,7 +23,7 @@
 
 [image1]: ./misc/rover_image.jpg
 [image2]: ./calibration_images/example_grid1.jpg
-[image3]: ./output/RoboND_Rover_SG_Screencast 2018-09-02 17_51_04.gif
+[image3]: ./calibration_images/example_rock1.jpg 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -101,8 +101,8 @@ Following modifications done in process_image function
 
 _Video output in 'Test Output Video' --> Named 'process_image_output_SG.mp4'_
 
-
 ![alt text][image2]
+
 ### Autonomous Navigation and Mapping
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
@@ -307,6 +307,6 @@ Future Improvements or Enhancements
 
 _Video output in 'Test Output Video' --> Named 'RoboND_Rover_SG_Screencast 2018-09-02 17:51:04.mp4'_
 
-![alt text][image3]
+![alt text](./output/RoboND_Rover_SG_Screencast 2018-09-02 17_51_04.gif)
 
 
