@@ -1,15 +1,14 @@
 ## Project: Search and Sample Return
-### Writeup Template: You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+### Author: Snehal Gor
 
 ---
-
 
 **The goals / steps of this project are the following:**  
 
 **Training / Calibration**  
 
-* Download the simulator and take data in "Training Mode"
-* Test out the functions in the Jupyter Notebook provided
+* Download the simulator ([MacOS](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Mac_Roversim.zip), [Linux](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Linux_Roversim.zip), [Windows](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Windows_Roversim.zip)) and take data in "Training Mode"
+* Test out the functions in the Jupyter Notebook
 * Add functions to detect obstacles and samples of interest (golden rocks)
 * Fill in the `process_image()` function with the appropriate image processing steps (perspective transform, color threshold etc.) to get from raw images to a map.  The `output_image` you create in this step should demonstrate that your mapping pipeline works.
 * Use `moviepy` to process the images in your saved dataset with the `process_image()` function.  Include the video you produce as part of your submission.
@@ -24,7 +23,7 @@
 
 [image1]: ./misc/rover_image.jpg
 [image2]: ./calibration_images/example_grid1.jpg
-[image3]: ./calibration_images/example_rock1.jpg 
+[image3]: ./output/RoboND_Rover_SG_Screencast 2018-09-02 17_51_04.gif
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -32,22 +31,16 @@
 ---
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
-
-You're reading it!
-
 ### Notebook Analysis
 #### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
 
 New function named 'color_thresh_SG' has been written. Following are the modifications compared to base version
 1. Pixel values above threshold (rgb_thresh_Gr), identified as Ground pixels - Brighter pixels
 2. Obstacle threshold being added : rgb_thresh_Ob
-3. Pixel values below threshold (rgb_thresh_Ob), identified as Obstace pixels - Darker pixels
+3. Pixel values below threshold (rgb_thresh_Ob), identified as Obstacle pixels - Darker pixels
 4. Image converted from RGB -> HSV space using OpenCV function
-5. Yellow color pixels identified in HSV space with lower threshold at '20,100,100' & upper threshold at '30,255,255' (Using OpenCV fnction inRange)
+5. Yellow color pixels identified in HSV space with lower threshold at '20,100,100' & upper threshold at '30,255,255' (Using OpenCV function inRange)
 6. Identified rock pixels removed from obstacle pixels (cleanup)
-
-Here is an example of how to include an image in your writeup.
 
 ![alt text][image1]
 
@@ -108,7 +101,6 @@ Following modifications done in process_image function
 
 _Video output in 'Test Output Video' --> Named 'process_image_output_SG.mp4'_
 
-And another! 
 
 ![alt text][image2]
 ### Autonomous Navigation and Mapping
@@ -304,14 +296,14 @@ My approach / experiments
 1. In Perception - For identifying Yellow Rocks, HSV space performed well as particular color needs to be identified
 2. Stacking Obstacles, Rocks & Navigable pixels as one image, helped generation of vision image & world map
 3. Fidelity improved through rejection of perspective transformed mapping when pitch or roll higher
-4. Logic to handle Rove rstuck scenarion being added, but better approach required
-5. Navigation towards Rock acheived through use of Rock pixels for navigation. It works, but sometime rover stuck while retriving the Rock. Logic mentioned in 4 above helped to avoid such situation. 
-6. Smoothning to improve Rover fidelity (Reducing impact of sudden movement) tried, but resulted in a oscillatory motion. Some dampning or PID like approach required
+4. Logic to handle Rover stuck scenario being added, but better approach required
+5. Navigation towards Rock achieved through use of Rock pixels for navigation. It works, but sometime rover stuck while retrieving the Rock. Logic mentioned in 4 above helped to avoid such situation. 
+6. Smoothening to improve Rover fidelity (Reducing impact of sudden movement) tried, but resulted in a oscillatory motion. Some dampening or PID like approach required
 
-Furture Improvements or Enhancements
-1. Rover sometime circles around one area continously. Map mapping & avoiding already traced area required.
+Future Improvements or Enhancements
+1. Rover sometime circles around one area continuously. Map mapping & avoiding already traced area required.
 2. Better approach to Rover stuck case handling may be possible
-3. Currenly Rover is able to pick up all obstacles, but going back to center of the Map missing
+3. Currently Rover is able to pick up all obstacles, but going back to center of the Map missing
 
 _Video output in 'Test Output Video' --> Named 'RoboND_Rover_SG_Screencast 2018-09-02 17:51:04.mp4'_
 
