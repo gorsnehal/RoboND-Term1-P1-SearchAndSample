@@ -99,9 +99,7 @@ Following modifications done in process_image function
 	data.worldmap[ypix_w, xpix_w, valIndx] += 1
 	```
 
-_Video output in 'Test Output Video' --> Named 'process_image_output_SG.mp4'_
-
-![alt text][image2]
+![ProcessedOutput](https://github.com/gorsnehal/RoboND-Term1-P1-SearchAndSample/blob/master/output/process_image_output_SG.gif)
 
 ### Autonomous Navigation and Mapping
 
