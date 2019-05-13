@@ -307,6 +307,6 @@ Future Improvements or Enhancements
 
 _Video output in 'Test Output Video' --> Named 'RoboND_Rover_SG_Screencast 2018-09-02 17:51:04.mp4'_
 
-![](RoboND_Rover_SG_Screencast 2018-09-02 17_51_04.gif)
+![Output](https://github.com/gorsnehal/RoboND-Term1-P1-SearchAndSample/blob/master/output/RoboND_Rover_SG_Screencast%202018-09-02%2017_51_04.gif)
 
 
